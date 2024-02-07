@@ -1,5 +1,5 @@
 {
-  "name": "Clone-DIO",
+  "name": "clone-dio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,5 +43,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.18",
+    "@types/styled-components": "^5.1.34",
+    "typescript": "^5.3.3"
   }
 }

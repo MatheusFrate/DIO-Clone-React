@@ -23,6 +23,7 @@ import {
   Row,
   FazerLoginText,
 } from './styles';
+import { IFormData, IUser } from './types';
 
 const schema = yup
   .object({
@@ -49,10 +50,10 @@ const Cadastro = () => {
     mode: 'onChange',
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const users = await api.get('users');
-      const maxId = Math.max(...users.data.map((user) => user.id));
+      const maxId = Math.max(...users.data.map((user: IUser) => user.id));
       console.log(maxId);
       formData.id = (maxId + 1).toString();
       const { data } = await api.post('users', formData);
@@ -85,21 +86,21 @@ const Cadastro = () => {
                 control={control}
                 name="nome"
                 placeholder="Nome Completo"
-                leftIcon={IoPerson}
+                leftIcon={<IoPerson />}
                 errorMessage={errors?.nome?.message}
               />
               <Input
                 control={control}
                 name="email"
                 placeholder="E-mail"
-                leftIcon={MdEmail}
+                leftIcon={<MdEmail />}
                 errorMessage={errors?.email?.message}
               />
               <Input
                 control={control}
                 name="senha"
                 placeholder="Senha"
-                leftIcon={MdLock}
+                leftIcon={<MdLock />}
                 errorMessage={errors?.senha?.message}
               />
 

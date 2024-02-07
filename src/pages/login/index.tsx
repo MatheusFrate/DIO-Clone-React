@@ -20,6 +20,7 @@ import {
   TitleLogin,
   Wrapper,
 } from './styles';
+import { IFormData } from './types';
 
 const schema = yup
   .object({
@@ -41,12 +42,12 @@ const Login = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFormData>({
     resolver: yupResolver(schema),
     mode: 'onChange',
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const { data } = await api.get(
         `users?email=${formData.email}&senha=${formData.senha}`
@@ -82,7 +83,7 @@ const Login = () => {
                 control={control}
                 name="email"
                 placeholder="E-mail"
-                leftIcon={MdEmail}
+                leftIcon={<MdEmail />}
                 errorMessage={errors?.email?.message}
               />
               <Input
@@ -90,7 +91,7 @@ const Login = () => {
                 name="senha"
                 placeholder="Senha"
                 type="password"
-                leftIcon={MdLock}
+                leftIcon={<MdLock />}
                 errorMessage={errors?.senha?.message}
               />
               <Button title="Entrar" variant="secondary" type="submit" />

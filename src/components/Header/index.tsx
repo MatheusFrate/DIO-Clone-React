@@ -1,3 +1,4 @@
+import logo from '../../assets/logo-dio.png';
 import { Button } from '../Button';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -10,9 +11,9 @@ import {
   UserPicture,
   Wrapper,
 } from './styles';
-import logo from '../../assets/logo-dio.png';
+import { IHeader } from './types';
 
-const Header = ({ autenticado }) => {
+const Header = ({ autenticado }: IHeader) => {
   const navigate = useNavigate();
 
   const handleClickSignIn = () => {
@@ -43,7 +44,7 @@ const Header = ({ autenticado }) => {
             <UserPicture src="https://avatars.githubusercontent.com/u/55608318?v=4" />
           ) : (
             <>
-              <MenuRight href="$">Home</MenuRight>
+              <MenuRight href="/">Home</MenuRight>
               <Button title="Entrar" onClick={handleClickSignIn} />
               <Button title="Cadastrar" onClick={handleClickSignUp} />
             </>

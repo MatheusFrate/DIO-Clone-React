@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { IColumn } from './types';
 
-export const LoginContainer = styled.main`
+export const CadastroContainer = styled.main`
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
@@ -13,21 +14,12 @@ export const LoginContainer = styled.main`
 `;
 
 export const Wrapper = styled.div`
-  max-width: 300px;
+  max-width: 100%;
 `;
 
-export const Column = styled.div`
-  // flex: 1;
+export const Column = styled.div<IColumn>`
   flex: ${({ flex }) => flex};
   padding-right: 24px;
-`;
-
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
 `;
 
 export const Title = styled.h2`
@@ -35,6 +27,7 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
+
   max-width: 90%;
   margin-bottom: 20px;
   line-height: 44px;
@@ -42,40 +35,61 @@ export const Title = styled.h2`
   color: #ffffff;
 `;
 
-export const TitleLogin = styled.p`
+export const TitleCadastro = styled.h2`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 44px;
+
+  max-width: 90%;
   margin-bottom: 8px;
+  line-height: 44px;
+
+  color: #ffffff;
 `;
 
-export const SubtitleLogin = styled.p`
+export const SubtitleCadastro = styled.p`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 `;
 
-export const EsqueciText = styled.p`
+export const PoliticasText = styled.p`
   font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 19px;
-
-  color: #e5e044;
+  margin: 20px auto;
 `;
 
-export const CriarText = styled.p`
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const ContaText = styled.p`
   font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
   line-height: 19px;
+  margin-right: 8px;
+`;
 
+export const FazerLoginText = styled.a`
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 10px;
+
+  text-decoration: none;
   color: #23dd7a;
 `;
